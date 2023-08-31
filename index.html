@@ -1,0 +1,711 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Scaling Denoising Models from Low to High Computational Complexity</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<!-- Banner -->
+								<section id="banner">
+									<div class="content">
+										<header>
+											<h2>Scaling Denoising Models from Low to High Computational Complexity</h2>
+											<p>Submitted to ICASSP 2024</p>
+											<p>Authors: Anonymous</p>
+											<!-- <p>Tencent AI Lab, Audio and Speech Signal Processing Oteam</p>
+											<p>Email: chenhangting17@mails.ucas.ac.cn</p> -->
+										</header>
+										<p>Abstract: TBP
+										</p>
+										<!--
+										<ul class="actions">
+											<li><a href="#" class="button big">Learn More</a></li>
+										</ul>-->
+									</div>
+								</section>
+								
+								<!-- <section id="poster">
+									<h2>Poster</h2>
+									<tr style="border-top:1px solid black">
+										<td><img id="poster_fig" alt="" width="100%" src="images/poster.png"></td>
+									</tr>
+								</section> -->
+
+							<!-- Section -->
+								<section id="details">
+									<header class="major">
+										<h2>A Quick Review</h2>
+									</header>
+									<div class="features">
+										<article>
+											<div class="content">
+												<h3>Background</h3>
+												<p>TBP </p>
+											</div>
+										</article>
+										<article>
+											<div class="content">
+												<h3>Experimental setup</h3>
+												<p>TBP  </p>
+											</div>
+										</article>
+										<article>
+											<div class="content">
+												<h3>Framework & Method</h3>
+												<p>TBP</p>
+												</p>
+											</div>
+										</article>
+										<article>
+											<div class="content">
+												<h3>Results</h3>
+												<p>TBP</p>
+											</div>
+										</article>
+									</div>
+								</section>
+
+								<section id="results_table">
+									<h2>Detailed results</h2>
+									<tr style="border-top:1px solid black">
+										<td><img id="results_fig1" alt="" width="75%" src="images/results1.png"></td>
+									</tr>
+									<tr style="border-top:1px solid black">
+										<td><img id="results_fig2" alt="" width="75%" src="images/results2.png"></td>
+									</tr>
+								</section>
+
+								<section id="denoising_wo_reverb">
+									<header class="major">
+										<h2>Denoising (w/o reverb)</h2>
+									</header>
+									<div class="posts">
+										<article>
+											<table cellspacing="50" style="width: 50%">
+												<thead>
+													<tr>
+														<th><center>MACs/s</center> </th>
+														<th><center>Causal</center> </th>
+														<th><center>1</center> </th>
+														<th><center>2</center> </th>
+														<th><center>3</center> </th>
+														<th><center>4</center> </th>
+														<th><center>5</center> </th>
+														<th><center>6</center> </th>
+														<th><center>7</center> </th>
+														<th><center>8</center> </th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr style="border-top:1px solid black">
+														<td><center>Mixture</center></td>
+														<td><center>N/A</center></td>
+														<td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/inp/clnsp1_train_69005_1_snr15_tl-21_fileid_158.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/inp/clnsp16_traffic_248091_1_snr11_tl-22_fileid_88.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/inp/clnsp17_birds_413745_3_snr2_tl-23_fileid_44.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/inp/clnsp22_breath_21983_0_snr1_tl-18_fileid_50.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/inp/clnsp25_babble_188218_21_snr5_tl-25_fileid_147.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/inp/clnsp27_GvaTLOWuCK8_snr10_tl-22_fileid_296.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/inp/clnsp30_birds_121947_2_snr6_tl-27_fileid_116.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/inp/clnsp44_wind_97396_2_snr14_tl-26_fileid_271.wav" ></audio></td>
+													</tr>
+													<tr style="border-top:1px solid black">
+														<td><center>48M/s</center></td>
+														<td><center>&#x2713;</center></td>
+														<td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM50M/clnsp1_train_69005_1_snr15_tl-21_fileid_158.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM50M/clnsp16_traffic_248091_1_snr11_tl-22_fileid_88.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM50M/clnsp17_birds_413745_3_snr2_tl-23_fileid_44.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM50M/clnsp22_breath_21983_0_snr1_tl-18_fileid_50.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM50M/clnsp25_babble_188218_21_snr5_tl-25_fileid_147.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM50M/clnsp27_GvaTLOWuCK8_snr10_tl-22_fileid_296.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM50M/clnsp30_birds_121947_2_snr6_tl-27_fileid_116.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM50M/clnsp44_wind_97396_2_snr14_tl-26_fileid_271.wav" ></audio></td>
+													</tr>
+													<tr style="border-top:1px solid black">
+														<td><center>102M/s</center></td>
+														<td><center>&#x2713;</center></td>
+														<td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM100M/clnsp1_train_69005_1_snr15_tl-21_fileid_158.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM100M/clnsp16_traffic_248091_1_snr11_tl-22_fileid_88.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM100M/clnsp17_birds_413745_3_snr2_tl-23_fileid_44.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM100M/clnsp22_breath_21983_0_snr1_tl-18_fileid_50.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM100M/clnsp25_babble_188218_21_snr5_tl-25_fileid_147.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM100M/clnsp27_GvaTLOWuCK8_snr10_tl-22_fileid_296.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM100M/clnsp30_birds_121947_2_snr6_tl-27_fileid_116.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM100M/clnsp44_wind_97396_2_snr14_tl-26_fileid_271.wav" ></audio></td>
+													</tr>
+													<tr style="border-top:1px solid black">
+														<td><center>195M/s</center></td>
+														<td><center>&#x2713;</center></td>
+														<td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM200M/clnsp1_train_69005_1_snr15_tl-21_fileid_158.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM200M/clnsp16_traffic_248091_1_snr11_tl-22_fileid_88.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM200M/clnsp17_birds_413745_3_snr2_tl-23_fileid_44.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM200M/clnsp22_breath_21983_0_snr1_tl-18_fileid_50.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM200M/clnsp25_babble_188218_21_snr5_tl-25_fileid_147.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM200M/clnsp27_GvaTLOWuCK8_snr10_tl-22_fileid_296.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM200M/clnsp30_birds_121947_2_snr6_tl-27_fileid_116.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM200M/clnsp44_wind_97396_2_snr14_tl-26_fileid_271.wav" ></audio></td>
+													</tr>
+													<tr style="border-top:1px solid black">
+														<td><center>301M/s</center></td>
+														<td><center>&#x2713;</center></td>
+														<td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM300M/clnsp1_train_69005_1_snr15_tl-21_fileid_158.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM300M/clnsp16_traffic_248091_1_snr11_tl-22_fileid_88.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM300M/clnsp17_birds_413745_3_snr2_tl-23_fileid_44.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM300M/clnsp22_breath_21983_0_snr1_tl-18_fileid_50.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM300M/clnsp25_babble_188218_21_snr5_tl-25_fileid_147.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM300M/clnsp27_GvaTLOWuCK8_snr10_tl-22_fileid_296.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM300M/clnsp30_birds_121947_2_snr6_tl-27_fileid_116.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM300M/clnsp44_wind_97396_2_snr14_tl-26_fileid_271.wav" ></audio></td>
+													</tr>
+													<tr style="border-top:1px solid black">
+														<td><center>502M/s</center></td>
+														<td><center>&#x2713;</center></td>
+														<td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM500M/clnsp1_train_69005_1_snr15_tl-21_fileid_158.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM500M/clnsp16_traffic_248091_1_snr11_tl-22_fileid_88.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM500M/clnsp17_birds_413745_3_snr2_tl-23_fileid_44.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM500M/clnsp22_breath_21983_0_snr1_tl-18_fileid_50.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM500M/clnsp25_babble_188218_21_snr5_tl-25_fileid_147.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM500M/clnsp27_GvaTLOWuCK8_snr10_tl-22_fileid_296.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM500M/clnsp30_birds_121947_2_snr6_tl-27_fileid_116.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM500M/clnsp44_wind_97396_2_snr14_tl-26_fileid_271.wav" ></audio></td>
+													</tr>
+													<tr style="border-top:1px solid black">
+														<td><center>1G/s</center></td>
+														<td><center>&#x2713;</center></td>
+														<td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM1000M/clnsp1_train_69005_1_snr15_tl-21_fileid_158.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM1000M/clnsp16_traffic_248091_1_snr11_tl-22_fileid_88.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM1000M/clnsp17_birds_413745_3_snr2_tl-23_fileid_44.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM1000M/clnsp22_breath_21983_0_snr1_tl-18_fileid_50.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM1000M/clnsp25_babble_188218_21_snr5_tl-25_fileid_147.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM1000M/clnsp27_GvaTLOWuCK8_snr10_tl-22_fileid_296.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM1000M/clnsp30_birds_121947_2_snr6_tl-27_fileid_116.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM1000M/clnsp44_wind_97396_2_snr14_tl-26_fileid_271.wav" ></audio></td>
+													</tr>
+													<tr style="border-top:1px solid black">
+														<td><center>14G/s</center></td>
+														<td><center>&#x2713;</center></td>
+														<td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM14G/clnsp1_train_69005_1_snr15_tl-21_fileid_158.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM14G/clnsp16_traffic_248091_1_snr11_tl-22_fileid_88.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM14G/clnsp17_birds_413745_3_snr2_tl-23_fileid_44.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM14G/clnsp22_breath_21983_0_snr1_tl-18_fileid_50.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM14G/clnsp25_babble_188218_21_snr5_tl-25_fileid_147.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM14G/clnsp27_GvaTLOWuCK8_snr10_tl-22_fileid_296.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM14G/clnsp30_birds_121947_2_snr6_tl-27_fileid_116.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM14G/clnsp44_wind_97396_2_snr14_tl-26_fileid_271.wav" ></audio></td>
+													</tr>
+													<tr style="border-top:1px solid black">
+														<td><center>23G/s</center></td>
+														<td><center>&#x2717;</center></td>
+														<td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM23G/clnsp1_train_69005_1_snr15_tl-21_fileid_158.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM23G/clnsp16_traffic_248091_1_snr11_tl-22_fileid_88.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM23G/clnsp17_birds_413745_3_snr2_tl-23_fileid_44.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM23G/clnsp22_breath_21983_0_snr1_tl-18_fileid_50.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM23G/clnsp25_babble_188218_21_snr5_tl-25_fileid_147.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM23G/clnsp27_GvaTLOWuCK8_snr10_tl-22_fileid_296.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM23G/clnsp30_birds_121947_2_snr6_tl-27_fileid_116.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM23G/clnsp44_wind_97396_2_snr14_tl-26_fileid_271.wav" ></audio></td>
+													</tr>
+													<tr style="border-top:1px solid black">
+														<td><center>Clean</center></td>
+														<td><center>N/A</center></td>
+														<td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/tgt/clnsp1_train_69005_1_snr15_tl-21_fileid_158.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/tgt/clnsp16_traffic_248091_1_snr11_tl-22_fileid_88.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/tgt/clnsp17_birds_413745_3_snr2_tl-23_fileid_44.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/tgt/clnsp22_breath_21983_0_snr1_tl-18_fileid_50.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/tgt/clnsp25_babble_188218_21_snr5_tl-25_fileid_147.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/tgt/clnsp27_GvaTLOWuCK8_snr10_tl-22_fileid_296.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/tgt/clnsp30_birds_121947_2_snr6_tl-27_fileid_116.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/tgt/clnsp44_wind_97396_2_snr14_tl-26_fileid_271.wav" ></audio></td>
+													</tr>
+												</tbody>
+											</table>
+										</article>
+									</div>
+								</section>
+
+								<section id="denoising_wi_reverb">
+									<header class="major">
+										<h2>Denoising (w/  reverb)</h2>
+									</header>
+									<div class="posts">
+										<article>
+											<table cellspacing="50" style="width: 50%">
+												<thead>
+													<tr>
+														<th><center>MACs/s</center> </th>
+														<th><center>Causal</center> </th>
+														<th><center>1</center> </th>
+														<th><center>2</center> </th>
+														<th><center>3</center> </th>
+														<th><center>4</center> </th>
+														<th><center>5</center> </th>
+														<th><center>6</center> </th>
+														<th><center>7</center> </th>
+														<th><center>8</center> </th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr style="border-top:1px solid black">
+														<td><center>Mixture</center></td>
+														<td><center>N/A</center></td>
+														<td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/inp/clnsp1_train_69005_1_snr15_tl-21_fileid_158.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/inp/clnsp16_traffic_248091_1_snr11_tl-22_fileid_88.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/inp/clnsp17_birds_413745_3_snr2_tl-23_fileid_44.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/inp/clnsp22_breath_21983_0_snr1_tl-18_fileid_50.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/inp/clnsp25_babble_188218_21_snr5_tl-25_fileid_147.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/inp/clnsp27_GvaTLOWuCK8_snr10_tl-22_fileid_296.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/inp/clnsp30_birds_121947_2_snr6_tl-27_fileid_116.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/inp/clnsp44_wind_97396_2_snr14_tl-26_fileid_271.wav" ></audio></td>
+													</tr>
+													<tr style="border-top:1px solid black">
+														<td><center>48M/s</center></td>
+														<td><center>&#x2713;</center></td>
+														<td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM50M/clnsp1_train_69005_1_snr15_tl-21_fileid_158.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM50M/clnsp16_traffic_248091_1_snr11_tl-22_fileid_88.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM50M/clnsp17_birds_413745_3_snr2_tl-23_fileid_44.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM50M/clnsp22_breath_21983_0_snr1_tl-18_fileid_50.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM50M/clnsp25_babble_188218_21_snr5_tl-25_fileid_147.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM50M/clnsp27_GvaTLOWuCK8_snr10_tl-22_fileid_296.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM50M/clnsp30_birds_121947_2_snr6_tl-27_fileid_116.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM50M/clnsp44_wind_97396_2_snr14_tl-26_fileid_271.wav" ></audio></td>
+													</tr>
+													<tr style="border-top:1px solid black">
+														<td><center>102M/s</center></td>
+														<td><center>&#x2713;</center></td>
+														<td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM100M/clnsp1_train_69005_1_snr15_tl-21_fileid_158.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM100M/clnsp16_traffic_248091_1_snr11_tl-22_fileid_88.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM100M/clnsp17_birds_413745_3_snr2_tl-23_fileid_44.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM100M/clnsp22_breath_21983_0_snr1_tl-18_fileid_50.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM100M/clnsp25_babble_188218_21_snr5_tl-25_fileid_147.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM100M/clnsp27_GvaTLOWuCK8_snr10_tl-22_fileid_296.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM100M/clnsp30_birds_121947_2_snr6_tl-27_fileid_116.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM100M/clnsp44_wind_97396_2_snr14_tl-26_fileid_271.wav" ></audio></td>
+													</tr>
+													<tr style="border-top:1px solid black">
+														<td><center>195M/s</center></td>
+														<td><center>&#x2713;</center></td>
+														<td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM200M/clnsp1_train_69005_1_snr15_tl-21_fileid_158.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM200M/clnsp16_traffic_248091_1_snr11_tl-22_fileid_88.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM200M/clnsp17_birds_413745_3_snr2_tl-23_fileid_44.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM200M/clnsp22_breath_21983_0_snr1_tl-18_fileid_50.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM200M/clnsp25_babble_188218_21_snr5_tl-25_fileid_147.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM200M/clnsp27_GvaTLOWuCK8_snr10_tl-22_fileid_296.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM200M/clnsp30_birds_121947_2_snr6_tl-27_fileid_116.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM200M/clnsp44_wind_97396_2_snr14_tl-26_fileid_271.wav" ></audio></td>
+													</tr>
+													<tr style="border-top:1px solid black">
+														<td><center>301M/s</center></td>
+														<td><center>&#x2713;</center></td>
+														<td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM300M/clnsp1_train_69005_1_snr15_tl-21_fileid_158.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM300M/clnsp16_traffic_248091_1_snr11_tl-22_fileid_88.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM300M/clnsp17_birds_413745_3_snr2_tl-23_fileid_44.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM300M/clnsp22_breath_21983_0_snr1_tl-18_fileid_50.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM300M/clnsp25_babble_188218_21_snr5_tl-25_fileid_147.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM300M/clnsp27_GvaTLOWuCK8_snr10_tl-22_fileid_296.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM300M/clnsp30_birds_121947_2_snr6_tl-27_fileid_116.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM300M/clnsp44_wind_97396_2_snr14_tl-26_fileid_271.wav" ></audio></td>
+													</tr>
+													<tr style="border-top:1px solid black">
+														<td><center>502M/s</center></td>
+														<td><center>&#x2713;</center></td>
+														<td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM500M/clnsp1_train_69005_1_snr15_tl-21_fileid_158.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM500M/clnsp16_traffic_248091_1_snr11_tl-22_fileid_88.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM500M/clnsp17_birds_413745_3_snr2_tl-23_fileid_44.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM500M/clnsp22_breath_21983_0_snr1_tl-18_fileid_50.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM500M/clnsp25_babble_188218_21_snr5_tl-25_fileid_147.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM500M/clnsp27_GvaTLOWuCK8_snr10_tl-22_fileid_296.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM500M/clnsp30_birds_121947_2_snr6_tl-27_fileid_116.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM500M/clnsp44_wind_97396_2_snr14_tl-26_fileid_271.wav" ></audio></td>
+													</tr>
+													<tr style="border-top:1px solid black">
+														<td><center>1G/s</center></td>
+														<td><center>&#x2713;</center></td>
+														<td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM1000M/clnsp1_train_69005_1_snr15_tl-21_fileid_158.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM1000M/clnsp16_traffic_248091_1_snr11_tl-22_fileid_88.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM1000M/clnsp17_birds_413745_3_snr2_tl-23_fileid_44.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM1000M/clnsp22_breath_21983_0_snr1_tl-18_fileid_50.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM1000M/clnsp25_babble_188218_21_snr5_tl-25_fileid_147.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM1000M/clnsp27_GvaTLOWuCK8_snr10_tl-22_fileid_296.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM1000M/clnsp30_birds_121947_2_snr6_tl-27_fileid_116.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM1000M/clnsp44_wind_97396_2_snr14_tl-26_fileid_271.wav" ></audio></td>
+													</tr>
+													<tr style="border-top:1px solid black">
+														<td><center>14G/s</center></td>
+														<td><center>&#x2713;</center></td>
+														<td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM14G/clnsp1_train_69005_1_snr15_tl-21_fileid_158.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM14G/clnsp16_traffic_248091_1_snr11_tl-22_fileid_88.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM14G/clnsp17_birds_413745_3_snr2_tl-23_fileid_44.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM14G/clnsp22_breath_21983_0_snr1_tl-18_fileid_50.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM14G/clnsp25_babble_188218_21_snr5_tl-25_fileid_147.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM14G/clnsp27_GvaTLOWuCK8_snr10_tl-22_fileid_296.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM14G/clnsp30_birds_121947_2_snr6_tl-27_fileid_116.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM14G/clnsp44_wind_97396_2_snr14_tl-26_fileid_271.wav" ></audio></td>
+													</tr>
+													<tr style="border-top:1px solid black">
+														<td><center>23G/s</center></td>
+														<td><center>&#x2717;</center></td>
+														<td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM23G/clnsp1_train_69005_1_snr15_tl-21_fileid_158.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM23G/clnsp16_traffic_248091_1_snr11_tl-22_fileid_88.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM23G/clnsp17_birds_413745_3_snr2_tl-23_fileid_44.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM23G/clnsp22_breath_21983_0_snr1_tl-18_fileid_50.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM23G/clnsp25_babble_188218_21_snr5_tl-25_fileid_147.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM23G/clnsp27_GvaTLOWuCK8_snr10_tl-22_fileid_296.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM23G/clnsp30_birds_121947_2_snr6_tl-27_fileid_116.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/TM23G/clnsp44_wind_97396_2_snr14_tl-26_fileid_271.wav" ></audio></td>
+													</tr>
+													<tr style="border-top:1px solid black">
+														<td><center>Clean</center></td>
+														<td><center>N/A</center></td>
+														<td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/tgt/clnsp1_train_69005_1_snr15_tl-21_fileid_158.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/tgt/clnsp16_traffic_248091_1_snr11_tl-22_fileid_88.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/tgt/clnsp17_birds_413745_3_snr2_tl-23_fileid_44.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/tgt/clnsp22_breath_21983_0_snr1_tl-18_fileid_50.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/tgt/clnsp25_babble_188218_21_snr5_tl-25_fileid_147.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/tgt/clnsp27_GvaTLOWuCK8_snr10_tl-22_fileid_296.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/tgt/clnsp30_birds_121947_2_snr6_tl-27_fileid_116.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_withreverb/tgt/clnsp44_wind_97396_2_snr14_tl-26_fileid_271.wav" ></audio></td>
+													</tr>
+												</tbody>
+											</table>
+										</article>
+									</div>
+								</section>
+
+								<section id="real_recorded_test">
+									<header class="major">
+										<h2>Real-recorded audio test</h2>
+									</header>
+									<div class="posts">
+										<article>
+											<p> <strong>Note that all models here we used were trained on only the DNS challenge data. Further improvement can be achieved by adding music, noise, and speech data.</strong> </p>
+											<p> Copyright: <a href="https://www.youtube.com/watch?v=VyHV0BRtdxo">https://www.youtube.com/watch?v=VyHV0BRtdxo</a> </p>
+											<p> Copyright: <a href="https://www.youtube.com/watch?v=amHkph_TFog">https://www.youtube.com/watch?v=amHkph_TFog</a> </p>
+											<p> Copyright: <a href="https://www.youtube.com/watch?v=VO3E8eSbRyc">https://www.youtube.com/watch?v=VO3E8eSbRyc</a> </p>
+											<table cellspacing="50" style="width: 200%">
+												<thead>
+													<tr>
+														<th><center>MACs/s</center> </th>
+														<th><center>Causal</center> </th>
+														<th><center>1</center> </th>
+														<th><center>2</center> </th>
+														<th><center>3</center> </th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr style="border-top:1px solid black">
+														<td><center>Mixture</center></td>
+														<td><center>N/A</center></td>
+														<td><video id="v1_orig" width="100%" controls>
+														  <source src="video/orig/v1.mp4" ></video></td>
+														<td><video id="v2_orig" width="100%" controls>
+														  <source src="video/orig/v3.mp4" ></video></td>
+														<td><video id="v3_orig" width="100%" controls>
+														  <source src="video/orig/v2.mp4" ></video></td>														
+													</tr>
+												</tbody>
+												<tbody>
+													<tr style="border-top:1px solid black">
+														<td><center>100M</center></td>
+														<td><center>&#x2713;</center></td>
+														<td><video id="v1_100M" width="100%" controls>
+														  <source src="video/100M/v1.mp4" ></video></td>
+														<td><video id="v2_100M" width="100%" controls>
+														  <source src="video/100M/v3.mp4" ></video></td>
+														<td><video id="v3_100M" width="100%" controls>
+														  <source src="video/100M/v2.mp4" ></video></td>														
+													</tr>
+												</tbody>
+												<tbody>
+													<tr style="border-top:1px solid black">
+														<td><center>300M</center></td>
+														<td><center>&#x2713;</center></td>
+														<td><video id="v1_300M" width="100%" controls>
+														  <source src="video/300M/v1.mp4" ></video></td>
+														<td><video id="v2_300M" width="100%" controls>
+														  <source src="video/300M/v3.mp4" ></video></td>
+														<td><video id="v3_300M" width="100%" controls>
+														  <source src="video/300M/v2.mp4" ></video></td>														
+													</tr>
+												</tbody>
+												<tbody>
+													<tr style="border-top:1px solid black">
+														<td><center>1000M</center></td>
+														<td><center>&#x2713;</center></td>
+														<td><video id="v1_1000M" width="100%" controls>
+														  <source src="video/1000M/v1.mp4" ></video></td>
+														<td><video id="v2_1000M" width="100%" controls>
+														  <source src="video/1000M/v3.mp4" ></video></td>
+														<td><video id="v3_1000M" width="100%" controls>
+														  <source src="video/1000M/v2.mp4" ></video></td>														
+													</tr>
+												</tbody>
+												<tbody>
+													<tr style="border-top:1px solid black">
+														<td><center>14G</center></td>
+														<td><center>&#x2713;</center></td>
+														<td><video id="v1_14G" width="100%" controls>
+														  <source src="video/14G/v1.mp4" ></video></td>
+														<td><video id="v2_14G" width="100%" controls>
+														  <source src="video/14G/v3.mp4" ></video></td>
+														<td><video id="v3_14G" width="100%" controls>
+														  <source src="video/14G/v2.mp4" ></video></td>														
+													</tr>
+													<tr style="border-top:1px solid black">
+														<td><center>23G</center></td>
+														<td><center>&#x2717;</center></td>
+														<td><video id="v1_23G" width="100%" controls>
+														  <source src="video/23G/v1.mp4" ></video></td>
+														<td><video id="v2_23G" width="100%" controls>
+														  <source src="video/23G/v3.mp4" ></video></td>
+														<td><video id="v3_23G" width="100%" controls>
+														  <source src="video/23G/v2.mp4" ></video></td>														
+													</tr>
+												</tbody>
+											</table>
+										</article>
+									</div>
+								</section>
+
+							<!-- <section>
+								<header class="major">
+									<h2>Related works</h2>
+								</header>
+								<p>[1] F. Dang, H. Chen, and P. Zhang, 
+									“Dpt-fsnet: Dual-path transformer based full-band and sub-band fusion network for speech enhancement,” 
+									in 2022 IEEE International Conference on Acoustics, Speech and Signal Processing, ICASSP 2022. IEEE, 202</p>
+								<p>[2] S. Zhang, Z. Wang, J. Sun, Y. Fu, B. Tian, Q. Fu, and L. Xie,
+									“Multi-task deep residual echo suppression with echo-aware loss,” 
+									in IEEE International Conference on Acoustics, Speech and Signal Processing, ICASSP 2022, Virtual and Singapore, 23-27 May 2022. IEEE, 2022, pp. 9127–9
+								</p>
+								<p>[3] X. Hao and X. Li, 
+									“Fast fullsubnet: Accelerate full-band and subband fusion model for single-channel speech enhancement,” arXiv preprint arXiv:2212.09019, 2022
+								</p>
+							</section> -->
+						</div>
+					</div>
+
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="#banner">Abstract</a></li>
+										<li><a href="#poster">Poster</a></li>
+										<li><a href="#details">A Quick Review</a></li>
+										<li><a href="#results_table">Detailed results</a></li>
+										<li>
+											<span class="opener">Audio samples</span>
+											<ul>
+												<li><a href="#denoising_wo_reverb">Denoising (w/o reverb)</a></li>
+												<li><a href="#denoising_wi_reverb">Denoising (w/  reverb)</a></li>
+												<li><a href="#real_recorded_test">Real-recorded audio test</a></li>
+											</ul>
+										</li>
+									</ul>
+								</nav>
+
+
+								<footer id="footer">
+									<p>
+										<center>Created by </center>
+									</p>
+									<p>
+										<center>Augest 16th, 2023</center>
+									</p>
+									<p class="copyright" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+										<img src="images/tencent_icon.png" width="50%" alt="">
+									</p>
+
+								</footer>
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

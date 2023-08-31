@@ -1,2 +1,2 @@
-# Scaling Denoising Models from Low to High Computational Complexity
-Introduction and demos of "Scaling Denoising Models from Low to High Computational Complexity" (Submiited to ICASSP 2024)
+# Continuous Target Speech Extraction: Enhancing Personalized Diarization and Extraction on Long Recordings
+Introduction and demos of "Continuous Target Speech Extraction: Enhancing Personalized Diarization and Extraction on Long Recordings" (Submiited to ICASSP 2024)

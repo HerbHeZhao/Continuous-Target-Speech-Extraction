@@ -91,24 +91,33 @@
 
 								<section id="denoising_wo_reverb">
 									<header class="major">
-										<h2>Denoising (w/o reverb)</h2>
+										<h2>Simulated-recorded audio test</h2>
 									</header>
 									<div class="posts">
 										<article>
 											<table cellspacing="50" style="width: 50%">
 												<thead>
 													<tr>
-														<th><center>MACs/s</center> </th>
-														<th><center>Causal</center> </th>
-														<th><center>1</center> </th>
-														<th><center>2</center> </th>
-														<th><center>3</center> </th>
+														<th><center>Method</center> </th>
+														<th><center>Speaker num</center> </th>
+														<th><center>OL</center> </th>
+														<th><center>OS</center> </th>
+														<th><center>OV10</center> </th>
+														<th><center>OV20</center> </th>
+														<th><center>OV30</center> </th>
+														<th><center>OV40</center> </th>
 													</tr>
 												</thead>
 												<tbody>
 													<tr style="border-top:1px solid black">
-														<td><center>102M/s</center></td>
-														<td><center>&#x2713;</center></td>
+														<td><center>anchor</center></td>
+														<td><center>2</center></td>
+														<td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM100M/clnsp1_train_69005_1_snr15_tl-21_fileid_158.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM100M/clnsp16_traffic_248091_1_snr11_tl-22_fileid_88.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM100M/clnsp44_wind_97396_2_snr14_tl-26_fileid_271.wav" ></audio></td>
 														<td><audio controls class="audio-player" preload="metadata" style="width:180px;">
 															<source src="demos_audios/dnsis20_wiotreverb/TM100M/clnsp1_train_69005_1_snr15_tl-21_fileid_158.wav" ></audio></td>
 														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
@@ -117,8 +126,14 @@
 															<source src="demos_audios/dnsis20_wiotreverb/TM100M/clnsp44_wind_97396_2_snr14_tl-26_fileid_271.wav" ></audio></td>
 													</tr>
 													<tr style="border-top:1px solid black">
-														<td><center>102M/s</center></td>
-														<td><center>&#x2713;</center></td>
+														<td><center>mixture</center></td>
+														<td><center>2</center></td>
+														<td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM100M/clnsp1_train_69005_1_snr15_tl-21_fileid_158.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM100M/clnsp16_traffic_248091_1_snr11_tl-22_fileid_88.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM100M/clnsp44_wind_97396_2_snr14_tl-26_fileid_271.wav" ></audio></td>
 														<td><audio controls class="audio-player" preload="metadata" style="width:180px;">
 															<source src="demos_audios/dnsis20_wiotreverb/TM100M/clnsp1_train_69005_1_snr15_tl-21_fileid_158.wav" ></audio></td>
 														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
@@ -127,8 +142,30 @@
 															<source src="demos_audios/dnsis20_wiotreverb/TM100M/clnsp44_wind_97396_2_snr14_tl-26_fileid_271.wav" ></audio></td>
 													</tr>
 													<tr style="border-top:1px solid black">
-														<td><center>102M/s</center></td>
-														<td><center>&#x2713;</center></td>
+														<td><center>clean</center></td>
+														<td><center>2</center></td>
+														<td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM100M/clnsp1_train_69005_1_snr15_tl-21_fileid_158.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM100M/clnsp16_traffic_248091_1_snr11_tl-22_fileid_88.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM100M/clnsp44_wind_97396_2_snr14_tl-26_fileid_271.wav" ></audio></td>
+														<td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM100M/clnsp1_train_69005_1_snr15_tl-21_fileid_158.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM100M/clnsp16_traffic_248091_1_snr11_tl-22_fileid_88.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM100M/clnsp44_wind_97396_2_snr14_tl-26_fileid_271.wav" ></audio></td>
+													</tr>
+													<tr style="border-top:1px solid black">
+														<td><center>TAVAD</center></td>
+														<td><center>2</center></td>
+														<td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM100M/clnsp1_train_69005_1_snr15_tl-21_fileid_158.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM100M/clnsp16_traffic_248091_1_snr11_tl-22_fileid_88.wav" ></audio></td>
+														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">
+															<source src="demos_audios/dnsis20_wiotreverb/TM100M/clnsp44_wind_97396_2_snr14_tl-26_fileid_271.wav" ></audio></td>
 														<td><audio controls class="audio-player" preload="metadata" style="width:180px;">
 															<source src="demos_audios/dnsis20_wiotreverb/TM100M/clnsp1_train_69005_1_snr15_tl-21_fileid_158.wav" ></audio></td>
 														  <td><audio controls class="audio-player" preload="metadata" style="width:180px;">

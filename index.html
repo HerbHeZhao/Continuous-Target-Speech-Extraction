@@ -27,10 +27,21 @@
 										</header>
 										<p>Submitted to ICASSP 2024</p>
 										<p>Authors: He Zhao & Hangting Chen & Jianwei Yu & Chao Weng</p>
-										<p>School of Information and Electronic Engineering, Zhejiang University</p>
-										<p>Tencent AI Lab, Audio and Speech Signal Processing Oteam</p>
+										<p>School of Information and Electronic Engineering, Zhejiang University & Tencent AI Lab, Audio and Speech Signal Processing Oteam</p>
+							
 										<p>Email: zhao_he@zju.edu.cn</p>
-										<p>Abstract: TBP</p>
+										<p>
+											Abstract: Target speaker extraction (TSE) can extract the target speaker's voice from the input mixture sound.
+											Previous works mainly focus on high-overlapping scenarios. For example, the DNS challenge evaluates the TSE on single-speaker noisy and highly overlapped multi-speaker noisy conditions.
+											However, real-world applications usually meet more complex scenarios like variable speaker overlapping and speaker absence.
+											In this study, we propose a framework to perform continuous TSE (C-TSE), which consists of a target speaker voice activation detection (TSVAD) and a TSE model.
+											This framework alleviates the issue of the poor performance of TSE on similar speakers and the lack of personal enhancement ability of diarization.
+											In detail, unlike conventional TSVAD deployed to refine the diarization results, the proposed TSVAD uses transformer blocks to generate the timestamps of the target speaker straightforwardly, independent of the diarization methods.
+											Moreover, we explore the different integration methods of TSVAD and TSE by comparing the parallel and cascaded methods.
+											The framework is evaluated on various metrics, including diarization and enhancement metrics.
+											Experiment results illustrate that the TSVAD exhibits lower diarization errors when compared with classic methods.
+											Sequential cascaded fusion of TSVAD and TSE further improves the extraction performance.
+										</p>
 										<!--
 										<ul class="actions">
 											<li><a href="#" class="button big">Learn More</a></li>
@@ -54,26 +65,37 @@
 										<article>
 											<div class="content">
 												<h3>Background</h3>
-												<p>TBP </p>
+												<p> Previous target speaker extraction mainly focused on high-overlapping scenarios.
+													For example, the DNS challenge evaluates the TSE on single-speaker noisy and highly overlapped multi-speaker noisy conditions.
+													However, real-world applications usually meet more complex scenarios like variable speaker overlapping and speaker absence.</p>
 											</div>
 										</article>
 										<article>
 											<div class="content">
 												<h3>Experimental setup</h3>
-												<p>TBP  </p>
+												<p>The experiments were performed on a simulated dataset. The test set is divided into four configurations based on the number of speakers: 2, 3, 4, 5. Each configuration corresponds to six overlap rates.</p>
 											</div>
 										</article>
 										<article>
 											<div class="content">
 												<h3>Framework & Method</h3>
-												<p>TBP</p>
+												<p>
+													(1) The introduction of transformer blocks improves the performance of TSVAD.
+												</p>
+												<p>
+													(2) For the continuous target speech extraction task in complex scenes, we propose the C-TSE network.
 												</p>
 											</div>
 										</article>
 										<article>
 											<div class="content">
 												<h3>Results</h3>
-												<p>TBP</p>
+												<p>
+													(1) TSVAD model is introduced with transformer blocks to capture the target speaker's activity, surpassing the classic clustering-based methods.
+												</p>
+												<p>
+													(2) Joint framework for C-TSE is proposed by the parallel fusion of TSVAD and TSE results, further promoting the performance on diarization and enhancement metrics.</p>
+												</p>
 											</div>
 										</article>
 									</div>
@@ -663,6 +685,10 @@
 									<div class="posts">
 										<article>
 											<p> Copyright: <a href="https://www.youtube.com/watch?v=P69xdkqBJno">https://www.youtube.com/watch?v=P69xdkqBJno</a> </p>
+											<p> Copyright: <a href="https://www.youtube.com/watch?v=BvHCpWixZRA">https://www.youtube.com/watch?v=BvHCpWixZRA</a> </p>
+											<p> Copyright: <a href="https://www.youtube.com/watch?v=BqSxjmvXzzY&t=81s">https://www.youtube.com/watch?v=BqSxjmvXzzY&t=81s</a> </p>
+											https://www.youtube.com/watch?v=b9PhQ9yMu8Y
+
 											<p> Copyright: <a href="https://www.youtube.com/watch?v=JcIHs0nnXsQ">https://www.youtube.com/watch?v=JcIHs0nnXsQ</a> </p>
 											<p> Copyright: <a href="https://www.youtube.com/watch?v=Xtwar56r4Lg">https://www.youtube.com/watch?v=Xtwar56r4Lg</a> </p>
 

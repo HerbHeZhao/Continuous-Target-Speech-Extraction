@@ -25,22 +25,20 @@
 										<header>
 											<h2>Continuous Target Speech Extraction: Enhancing Personalized Diarization and Extraction on Long Recordings</h2>
 										</header>
-										<p>Submitted to ICASSP 2024</p>
-										<p>Authors: He Zhao & Hangting Chen & Jianwei Yu & Chao Weng</p>
+										<!-- <p>Submitted to ICASSP 2024</p> -->
+										<p>Authors: He Zhao & Hangting Chen & Jianwei Yu & Yuehai Wang</p>
 										<p>School of Information and Electronic Engineering, Zhejiang University & Tencent AI Lab, Audio and Speech Signal Processing Oteam</p>
 							
 										<p>Email: zhao_he@zju.edu.cn</p>
 										<p>
-											Abstract: Target speaker extraction (TSE) can extract the target speaker's voice from the input mixture sound.
-											Previous works mainly focus on high-overlapping scenarios. For example, the DNS challenge evaluates the TSE on single-speaker noisy and highly overlapped multi-speaker noisy conditions.
-											However, real-world applications usually meet more complex scenarios like variable speaker overlapping and speaker absence.
-											In this study, we propose a framework to perform continuous TSE (C-TSE), which consists of a target speaker voice activation detection (TSVAD) and a TSE model.
-											This framework alleviates the issue of the poor performance of TSE on similar speakers and the lack of personal enhancement ability of diarization.
-											In detail, unlike conventional TSVAD deployed to refine the diarization results, the proposed TSVAD uses transformer blocks to generate the timestamps of the target speaker straightforwardly, independent of the diarization methods.
-											Moreover, we explore the different integration methods of TSVAD and TSE by comparing the parallel and cascaded methods.
-											The framework is evaluated on various metrics, including diarization and enhancement metrics.
-											Experiment results illustrate that the TSVAD exhibits lower diarization errors when compared with classic methods.
-											Sequential cascaded fusion of TSVAD and TSE further improves the extraction performance.
+											Abstract: Target speaker extraction (TSE) aims to extract the target speaker's voice from the input mixture. Previous studies have concentrated on high-overlapping scenarios. 
+											However, real-world applications usually meet more complex scenarios like variable speaker overlapping and target speaker absence. 
+											In this paper, we introduces a framework to perform continuous TSE (C-TSE), comprising a target speaker voice activation detection (TSVAD) and a TSE model. 
+											This framework significantly improves TSE performance on similar speakers and enhances personalization, which is lacking in traditional diarization methods. 
+											In detail, unlike conventional TSVAD deployed to refine the diarization results, the proposed Attention-target speaker voice activation detection (A-TSVAD) to directly generate timestamps of the target speaker. 
+											We also explore some different integration methods of A-TSVAD and TSE by comparing the cascaded and parallel methods. 
+											The framework's effectiveness is assessed using a range of metrics, including diarization and enhancement metrics. 
+											Our experiments demonstrate that A-TSVAD outperforms conventional methods in reducing diarization errors, when integrating A-TSVAD and TSE in a sequential cascaded manner further enhances extraction accuracy.
 										</p>
 										<!--
 										<ul class="actions">
